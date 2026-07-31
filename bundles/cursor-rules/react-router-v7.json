@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "react-router-v7",
+    "description": "React Router v7 route-module best practices",
+    "argHint": "[file or feature]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "Use route modules as the primary boundary for UI, loaders, actions, metadata, and error boundaries. Utilize `loaders` for fetching deterministic data and `actions` for mutations/form submissions. Store shareable state in the URL search parameters and keep ephemeral UI state local. Avoid global state for data belonging to route loaders. Enforce type-checking on all `loader` and `action` return values."
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (React Router v7); verbatim; example bundle for the repo schema"
+  }
+}
