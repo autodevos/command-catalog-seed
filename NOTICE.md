@@ -31,9 +31,18 @@ included, and every such bundle records its origin in its `provenance` block
 
 > When adding a bundle, append a row here and fill its `provenance`. Do not add
 > content under an unclear or copyleft license.
+| `bundles/copilot-instructions/accessibility.json` | https://github.com/github/awesome-copilot/blob/main/instructions/a11y.instructions.md | MIT |
+| `bundles/copilot-instructions/code-commenting.json` | https://github.com/github/awesome-copilot/blob/main/instructions/self-explanatory-code-commenting.instructions.md | MIT |
+| `bundles/copilot-instructions/devops-principles.json` | https://github.com/github/awesome-copilot/blob/main/instructions/devops-core-principles.instructions.md | MIT |
+| `bundles/copilot-instructions/markdown-authoring.json` | https://github.com/github/awesome-copilot/blob/main/instructions/markdown-content-creation.instructions.md | MIT |
+| `bundles/copilot-instructions/object-calisthenics.json` | https://github.com/github/awesome-copilot/blob/main/instructions/object-calisthenics.instructions.md | MIT |
+| `bundles/copilot-instructions/owasp-security.json` | https://github.com/github/awesome-copilot/blob/main/instructions/security-and-owasp.instructions.md | MIT |
 
 ## MIT-licensed sources (attribution)
 
 `bundles/claude-commands/*` — Claude Code subagent bodies, verbatim from
 [`0xfurai/claude-code-subagents`](https://github.com/0xfurai/claude-code-subagents),
 Copyright (c) 2025 0xfurai, MIT License.
+
+`bundles/copilot-instructions/*` — GitHub Copilot instruction bodies, verbatim from
+[`github/awesome-copilot`](https://github.com/github/awesome-copilot), Copyright GitHub, Inc., MIT License.
