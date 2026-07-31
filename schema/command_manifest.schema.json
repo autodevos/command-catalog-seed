@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/autodevos/command-catalog-seed/schema/command_manifest.schema.json",
+  "title": "Command Seed Bundle",
+  "description": "One slash-command, aligned to the shipped AutoDevOS command catalog (maestro-microservices #165 C1-C4a / #232a). The loader publishes only `manifest` as a PUBLIC tier=community kind:command bundle; `provenance` is the git-committed license record.",
+  "type": "object",
+  "required": ["manifest", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "manifest": {
+      "type": "object",
+      "required": ["name", "description", "behavior", "toolScope", "actionSafety"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "slug; unique across the repo; MUST NOT be a reserved first-party name (roadmap, grill-me, migrate)"
+        },
+        "description": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "argHint": { "type": "string", "maxLength": 80 },
+        "behavior": {
+          "type": "object",
+          "required": ["kind", "promptTemplate"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "const": "prompt" },
+            "promptTemplate": { "type": "string", "minLength": 1 }
+          }
+        },
+        "toolScope": {
+          "oneOf": [
+            { "const": "*" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "actionSafety": { "enum": ["read-only", "writes"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "license"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "minLength": 1, "description": "direct source URL, or 'original'" },
+        "license": { "type": "string", "minLength": 1, "description": "SPDX identifier, e.g. CC0-1.0, MIT, Apache-2.0" },
+        "fetchedAt": { "type": "string", "description": "YYYY-MM-DD extraction date" },
+        "notes": { "type": "string", "description": "attribution / origin format (e.g. 'cursor .mdc rule')" }
+      }
+    }
+  }
+}
