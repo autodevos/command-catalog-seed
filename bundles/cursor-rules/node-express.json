@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "node-express",
+    "description": "Node.js + Express API conventions",
+    "argHint": "[route or module]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "---\ndescription: \"Node.js and Express.js best practices for backend development\"\nglobs: **/*.js, **/*.ts, src/**/*.ts\nalwaysApply: false\n---\n# Node.js and Express.js Best Practices\n\n## Project Structure\n- Use proper directory structure\n- Implement proper module organization\n- Use proper middleware organization\n- Keep routes organized by domain\n- Implement proper error handling\n- Use proper configuration management\n\n## Express Setup\n- Use proper middleware setup\n- Implement proper routing\n- Use proper error handling\n- Configure proper security middleware\n- Implement proper validation\n- Use proper static file serving\n\n## API Design\n- Use proper REST principles\n- Implement proper versioning\n- Use proper request validation\n- Handle errors properly\n- Implement proper response formats\n- Document APIs properly\n\n## Database Integration\n- Use proper ORM/ODM\n- Implement proper migrations\n- Use proper connection pooling\n- Implement proper transactions\n- Use proper query optimization\n- Handle database errors properly\n\n## Authentication\n- Implement proper JWT handling\n- Use proper password hashing\n- Implement proper session management\n- Use proper OAuth integration\n- Implement proper role-based access\n- Handle auth errors properly\n\n## Security\n- Use proper CORS setup\n- Implement proper rate limiting\n- Use proper security headers\n- Implement proper input validation\n- Use proper encryption\n- Handle security vulnerabilities\n\n## Performance\n- Use proper caching\n- Implement proper async operations\n- Use proper connection pooling\n- Implement proper logging\n- Use proper monitoring\n- Handle high traffic properly\n\n## Testing\n- Write proper unit tests\n- Implement proper integration tests\n- Use proper test runners\n- Implement proper mocking\n- Test error scenarios\n- Use proper test coverage\n\n## Deployment\n- Use proper Docker setup\n- Implement proper CI/CD\n- Use proper environment variables\n- Configure proper logging\n- Implement proper monitoring\n- Handle deployment errors\n\n## Best Practices\n- Follow Node.js best practices\n- Use proper async/await\n- Implement proper error handling\n- Use proper logging\n- Handle process signals properly\n- Document code properly\n"
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/node-express.mdc",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (node-express.mdc); verbatim; PatrickJS/awesome-cursorrules (CC0-1.0)"
+  }
+}

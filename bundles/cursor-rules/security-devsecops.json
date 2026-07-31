@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "security-devsecops",
+    "description": "DevSecOps / AppSec security review guidance",
+    "argHint": "[change or file]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "---\ndescription: \"Cursor rules for secure coding, secret handling, dependency hygiene, authentication, authorization, security testing, and compliance documentation.\"\nglobs: [\"**/*.py\", \"**/*.js\", \"**/*.ts\", \"**/*.go\", \"**/*.java\", \"**/*.rb\", \"**/*.php\", \"**/*.cs\", \"**/*.sh\"]\nalwaysApply: true\n---\n# DevSecOps + SSDLC + AppSec Cursor Rule\n\n## General Security Principles\n- Never hardcode secrets, credentials, or API keys. Use environment variables or secure vaults for sensitive data.\n- Prohibit the inclusion of `.env`, secret config files, or unknown tokens in source control.\n- Never log sensitive data, secrets, or session tokens in application logs.\n- Validate and sanitize all user input. Escape output in HTML, JS, and SQL contexts.\n- Avoid unsafe functions such as `exec`, `eval`, or similar dynamic code execution.\n\n## Database Security\n- Use parameterized queries or ORM for all database access. Do not use string concatenation for query building.\n- Ensure database users have the least privilege required for their tasks.\n- Regularly review and update database access policies.\n\n## Dependency Management\n- Only use packages from verified sources.\n- Do not add new dependencies without explicit approval and security review.\n- Regularly update dependencies and scan for known vulnerabilities (SCA).\n\n## Authentication & Authorization\n- Use secure authentication frameworks; never implement custom authentication.\n- Store passwords using strong, salted hashes (e.g., Argon2, bcrypt).\n- Implement Role-Based Access Control (RBAC) for sensitive operations.\n- Enforce the principle of least privilege for APIs and UI actions.\n\n## Secure SDLC Practices\n- Integrate Static Application Security Testing (SAST) and Software Composition Analysis (SCA) into the CI pipeline.\n- Scan all code for secrets before merging (Secret Scanning).\n- Use Infrastructure as Code (IaC) scanning for all infrastructure code.\n- Integrate Dynamic Application Security Testing (DAST) in the CD pipeline for deployed applications.\n- Enforce Policy as Code (PaC) for automated, version-controlled security policies.\n\n## Monitoring & Feedback\n- Enable continuous vulnerability monitoring and alerting.\n- Integrate Runtime Application Self-Protection (RASP) and Web Application Firewall (WAF) as appropriate.\n- Encourage regular vulnerability assessments and penetration testing.\n- Maintain a feedback loop to update rules and prompts based on recurring vulnerabilities.\n\n## Compliance & Documentation\n- Align with industry standards (e.g., OWASP Top 10, NIST, ISO 27001).\n- Document all security controls and decisions for auditability.\n"
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/security-devsecops-ssdls-appsec.mdc",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (security-devsecops-ssdls-appsec.mdc); verbatim; PatrickJS/awesome-cursorrules (CC0-1.0)"
+  }
+}

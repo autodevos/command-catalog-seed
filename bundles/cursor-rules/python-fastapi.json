@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "python-fastapi",
+    "description": "Python 3.12 + FastAPI best practices",
+    "argHint": "[endpoint or module]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "---\ndescription: \"Cursor rules for Python FastAPI development with best practices.\"\nglobs: **/*\nalwaysApply: false\n---\nHere are some best practices and rules you must follow:\n\n- You use Python 3.12\n- Frameworks:\n  - pydantic\n  - fastapi\n  - sqlalchemy\n- You use poetry for dependency management\n- You use alembic for database migrations\n- You use fastapi-users for user management\n- You use fastapi-jwt-auth for authentication\n- You use fastapi-mail for email sending\n- You use fastapi-cache for caching\n- You use fastapi-limiter for rate limiting\n- You use fastapi-pagination for pagination\n\n1. **Use Meaningful Names**: Choose descriptive variable, function, and class names.\n2. **Follow PEP 8**: Adhere to the Python Enhancement Proposal 8 style guide for formatting.\n3. **Use Docstrings**: Document functions and classes with docstrings to explain their purpose.\n4. **Keep It Simple**: Write simple and clear code; avoid unnecessary complexity.\n5. **Use List Comprehensions**: Prefer list comprehensions for creating lists over traditional loops when appropriate.\n6. **Handle Exceptions**: Use try-except blocks to handle exceptions gracefully.\n7. **Use Virtual Environments**: Isolate project dependencies using virtual environments (e.g., `venv`).\n8. **Write Tests**: Implement unit tests to ensure code reliability.\n9. **Use Type Hints**: Utilize type hints for better code clarity and type checking.\n10. **Avoid Global Variables**: Limit the use of global variables to reduce side effects.\n\nThese rules will help you write clean, efficient, and maintainable Python code.\n"
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/python-312-fastapi-best-practices-cursorrules-prom.mdc",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (python-312-fastapi-best-practices-cursorrules-prom.mdc); verbatim; PatrickJS/awesome-cursorrules (CC0-1.0)"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "rust-general",
+    "description": "Rust general best practices",
+    "argHint": "[crate or module]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "---\ndescription: General Rust rules for safe, idiomatic application and library development\nglobs: [\"**/*.rs\", \"Cargo.toml\", \"Cargo.lock\"]\nalwaysApply: false\n---\n\n# Rust General Rules\n\n## Project Structure\n\n- Keep crates focused and name modules by domain responsibility.\n- Put reusable library code in `src/lib.rs` and binary entry points in `src/main.rs` or `src/bin/`.\n- Keep public APIs small and documented.\n- Use feature flags deliberately and document non-default features.\n- Commit `Cargo.lock` for applications; follow the project convention for libraries.\n\n## Ownership and Types\n\n- Prefer borrowing over cloning when ownership is not needed.\n- Use owned values at API boundaries when the callee must store data.\n- Model domain states with enums and structs instead of strings or booleans.\n- Use `Option<T>` for absence and `Result<T, E>` for fallible operations.\n- Avoid `unwrap()` and `expect()` outside tests, examples, and process-startup invariants.\n\n## Error Handling\n\n- Use `thiserror` or project-standard custom errors for libraries.\n- Use `anyhow` or project-standard context-rich errors for applications.\n- Add context when crossing IO, network, database, or parsing boundaries.\n- Do not discard errors with `_` unless explicitly documented.\n\n## Concurrency and Async\n\n- Use `Send` and `Sync` boundaries intentionally.\n- Prefer message passing or owned task inputs for async work.\n- Do not hold blocking locks across `.await`.\n- Use `tokio::task::spawn_blocking` or equivalent for blocking CPU or IO in async applications.\n- Propagate cancellation through futures rather than hiding it in detached tasks.\n\n## Testing and Quality\n\n- Run `cargo fmt` and `cargo clippy` before delivery.\n- Add unit tests for pure logic and integration tests for public behavior.\n- Use property tests for parsers, serializers, and state machines when useful.\n- Use benchmarks only after identifying a real performance question.\n\n## Common Mistakes\n\n- Do not fight the borrow checker by adding unnecessary `Arc<Mutex<_>>`.\n- Do not expose internal module structure through public APIs by accident.\n- Do not allocate in hot loops without measuring.\n- Do not use unsafe code unless the invariant is documented and tested.\n"
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/rust-general.mdc",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (rust-general.mdc); verbatim; PatrickJS/awesome-cursorrules (CC0-1.0)"
+  }
+}

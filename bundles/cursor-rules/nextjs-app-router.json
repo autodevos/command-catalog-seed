@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "nextjs-app-router",
+    "description": "Next.js App Router conventions and best practices",
+    "argHint": "[file or feature]",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "---\ndescription: \"Cursor rules for Next.js development with App Router integration.\"\nglobs: **/*\nalwaysApply: false\n---\n// Next.js App Router .cursorrules\n\n// Next.js App Router best practices\n\nconst nextjsAppRouterBestPractices = [\n  \"Use server components by default\",\n  \"Implement client components only when necessary\",\n  \"Utilize the new file-based routing system\",\n  \"Use layout.js for shared layouts\",\n  \"Implement loading.js for loading states\",\n  \"Use error.js for error handling\",\n  \"Utilize route handlers for API routes\",\n];\n\n// Folder structure\n\nconst folderStructure = `\napp/\n  layout.js\n  page.js\n  components/\n  lib/\n  styles/\npublic/\n`;\n\n// Additional instructions\n\nconst additionalInstructions = `\n1. Use TypeScript for type safety\n2. Implement proper metadata for SEO\n3. Utilize Next.js Image component for optimized images\n4. Use CSS Modules or Tailwind CSS for styling\n5. Implement proper error boundaries\n6. Follow Next.js naming conventions for special files\n7. Use environment variables for configuration\n`;\n"
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/nextjs-app-router-cursorrules-prompt-file.mdc",
+    "license": "CC0-1.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "cursor .mdc rule (nextjs-app-router-cursorrules-prompt-file.mdc); verbatim; PatrickJS/awesome-cursorrules (CC0-1.0)"
+  }
+}
