@@ -18,5 +18,22 @@ included, and every such bundle records its origin in its `provenance` block
 | `bundles/cursor-rules/rust-general.json` | https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/rust-general.mdc | CC0-1.0 |
 | `bundles/cursor-rules/security-devsecops.json` | https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/security-devsecops-ssdls-appsec.mdc | CC0-1.0 |
 
+| `bundles/claude-commands/docker-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/docker-expert.md | MIT |
+| `bundles/claude-commands/github-actions-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/github-actions-expert.md | MIT |
+| `bundles/claude-commands/graphql-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/graphql-expert.md | MIT |
+| `bundles/claude-commands/kubernetes-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/kubernetes-expert.md | MIT |
+| `bundles/claude-commands/playwright-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/playwright-expert.md | MIT |
+| `bundles/claude-commands/postgres-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/postgres-expert.md | MIT |
+| `bundles/claude-commands/python-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/python-expert.md | MIT |
+| `bundles/claude-commands/redis-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/redis-expert.md | MIT |
+| `bundles/claude-commands/terraform-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/terraform-expert.md | MIT |
+| `bundles/claude-commands/typescript-expert.json` | https://github.com/0xfurai/claude-code-subagents/blob/main/agents/typescript-expert.md | MIT |
+
 > When adding a bundle, append a row here and fill its `provenance`. Do not add
 > content under an unclear or copyleft license.
+
+## MIT-licensed sources (attribution)
+
+`bundles/claude-commands/*` — Claude Code subagent bodies, verbatim from
+[`0xfurai/claude-code-subagents`](https://github.com/0xfurai/claude-code-subagents),
+Copyright (c) 2025 0xfurai, MIT License.
