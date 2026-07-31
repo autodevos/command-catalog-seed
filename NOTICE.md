@@ -37,6 +37,10 @@ included, and every such bundle records its origin in its `provenance` block
 | `bundles/copilot-instructions/markdown-authoring.json` | https://github.com/github/awesome-copilot/blob/main/instructions/markdown-content-creation.instructions.md | MIT |
 | `bundles/copilot-instructions/object-calisthenics.json` | https://github.com/github/awesome-copilot/blob/main/instructions/object-calisthenics.instructions.md | MIT |
 | `bundles/copilot-instructions/owasp-security.json` | https://github.com/github/awesome-copilot/blob/main/instructions/security-and-owasp.instructions.md | MIT |
+| `bundles/gemini-skills/docs-writer.json` | https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/docs-writer/SKILL.md | Apache-2.0 |
+| `bundles/gemini-skills/github-issue-creator.json` | https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/github-issue-creator/SKILL.md | Apache-2.0 |
+| `bundles/gemini-skills/pr-address-comments.json` | https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/pr-address-comments/SKILL.md | Apache-2.0 |
+| `bundles/gemini-skills/pr-creator.json` | https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/pr-creator/SKILL.md | Apache-2.0 |
 
 ## MIT-licensed sources (attribution)
 
@@ -46,3 +50,8 @@ Copyright (c) 2025 0xfurai, MIT License.
 
 `bundles/copilot-instructions/*` — GitHub Copilot instruction bodies, verbatim from
 [`github/awesome-copilot`](https://github.com/github/awesome-copilot), Copyright GitHub, Inc., MIT License.
+
+## Apache-2.0 sources (attribution)
+
+`bundles/gemini-skills/*` — Gemini CLI SKILL.md bodies, verbatim from
+[`google-gemini/gemini-cli`](https://github.com/google-gemini/gemini-cli), Apache-2.0 License.
