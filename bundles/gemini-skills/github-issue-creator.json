@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "name": "github-issue-creator",
+    "description": "github issue creator skill",
+    "argHint": "<context>",
+    "behavior": {
+      "kind": "prompt",
+      "promptTemplate": "# GitHub Issue Creator\n\nThis skill guides the creation of high-quality GitHub issues that adhere to the\nrepository's standards and use the appropriate templates.\n\n## Workflow\n\nFollow these steps to create a GitHub issue:\n\n1.  **Identify Issue Type**: Determine if the request is a bug report, feature\n    request, or other category.\n\n2.  **Locate Template**: Search for issue templates in\n    `.github/ISSUE_TEMPLATE/`.\n    - `bug_report.yml`\n    - `feature_request.yml`\n    - `website_issue.yml`\n    - If no relevant YAML template is found, look for `.md` templates in the same\n      directory.\n\n3.  **Read Template**: Read the content of the identified template file to\n    understand the required fields.\n\n4.  **Draft Content**: Draft the issue title and body/fields.\n    - If using a YAML template (form), prepare values for each `id` defined in\n      the template.\n    - If using a Markdown template, follow its structure exactly.\n    - **Default Label**: Always include the `🔒 maintainer only` label unless the\n      user explicitly requests otherwise.\n\n5.  **Create Issue**: Use the `gh` CLI to create the issue.\n    - **CRITICAL:** To avoid shell escaping and formatting issues with\n      multi-line Markdown or complex text, ALWAYS write the description/body to\n      a temporary file first.\n\n    **For Markdown Templates or Simple Body:**\n    ```bash\n    # 1. Write the drafted content to a temporary file\n    # 2. Create the issue using the --body-file flag\n    gh issue create --title \"Succinct title\" --body-file <temp_file_path> --label \"🔒 maintainer only\"\n    # 3. Remove the temporary file\n    rm <temp_file_path>\n    ```\n\n    **For YAML Templates (Forms):**\n    While `gh issue create` supports `--body-file`, YAML forms usually expect\n    key-value pairs via flags if you want to bypass the interactive prompt.\n    However, the most reliable non-interactive way to ensure formatting is\n    preserved for long text fields is to use the `--body` or `--body-file` if the\n    form has been converted to a standard body, OR to use the `--field` flags\n    for YAML forms.\n\n    *Note: For the `gemini-cli` repository which uses YAML forms, you can often\n    submit the content as a single body if a specific field-based submission is\n    not required by the automation.*\n\n6.  **Verify**: Confirm the issue was created successfully and provide the link\n    to the user.\n\n## Principles\n\n- **Clarity**: Titles should be descriptive and follow project conventions.\n- **Defensive Formatting**: Always use temporary files with `--body-file` to\n  prevent newline and special character issues.\n- **Maintainer Priority**: Default to internal/maintainer labels to keep the\n  backlog organized.\n- **Completeness**: Provide all requested information (e.g., version info,\n  reproduction steps)."
+    },
+    "toolScope": "*",
+    "actionSafety": "read-only"
+  },
+  "provenance": {
+    "source": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/github-issue-creator/SKILL.md",
+    "license": "Apache-2.0",
+    "fetchedAt": "2026-07-31",
+    "notes": "Gemini CLI SKILL.md body (verbatim); google-gemini/gemini-cli (Apache-2.0)"
+  }
+}
