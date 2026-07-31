@@ -56,8 +56,26 @@ bundles/**/*.json  →  validate (schema)  →  seed loader (upsert_command_bund
                    →  GET /commands/catalog  →  install per-org  →  palette
 ```
 
-The repo → platform bridge (validator + the loader that consumes these JSONs)
-is tracked in **Issue #6**.
+## Validation & the platform bridge
+
+- **Validate** every bundle (schema + rules: `behavior.kind=="prompt"` with a
+  non-empty `promptTemplate`, `actionSafety` enum, slug + unique + non-reserved
+  `name`, `provenance.source`/`license`):
+  ```bash
+  python scripts/validate_bundles.py
+  ```
+  CI (`.github/workflows/validate.yml`) runs this on every PR + push to `master`.
+- **Build the platform seed module** (repo → platform bridge): concatenate the
+  validated bundles into the exact `SEED_COMMANDS` list shape
+  (`[{manifest, provenance}, …]`) that the platform's
+  `app/commands/seed_catalog.py` consumes:
+  ```bash
+  python scripts/build_seed_module.py   # -> dist/seed_commands.generated.json
+  ```
+  The platform vendors that output and `sync_seed_commands` publishes each entry
+  as a PUBLIC `tier=community` `kind:command` bundle at startup. (Wiring
+  `sync_seed_commands` to read the vendored file is a small follow-up PR on the
+  platform side.)
 
 ## Layout
 
